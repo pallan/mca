@@ -21,19 +21,19 @@ ActiveRecord::Schema.define(:version => 20120121192331) do
     t.string   "city"
     t.string   "province"
     t.string   "postal_code"
-    t.integer  "country"
+    t.integer  "country_id"
     t.string   "phone"
     t.string   "fax"
     t.string   "email"
     t.string   "website"
-    t.integer  "region"
+    t.integer  "region_id"
     t.integer  "sheets"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
 
-  add_index "clubs", ["country"], :name => "index_clubs_on_country"
-  add_index "clubs", ["region"], :name => "index_clubs_on_region"
+  add_index "clubs", ["country_id"], :name => "index_clubs_on_country_id"
+  add_index "clubs", ["region_id"], :name => "index_clubs_on_region_id"
 
   create_table "countries", :primary_key => "numcode", :force => true do |t|
     t.string  "iso"
@@ -45,9 +45,8 @@ ActiveRecord::Schema.define(:version => 20120121192331) do
   end
 
   create_table "regions", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string "name"
+    t.string "code"
   end
 
 end

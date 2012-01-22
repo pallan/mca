@@ -8,17 +8,17 @@ class CreateClubs < ActiveRecord::Migration
       t.string :city
       t.string :province
       t.string :postal_code
-      t.integer :country
+      t.integer :country_id
       t.string :phone
       t.string :fax
       t.string :email
       t.string :website
-      t.integer :region
+      t.integer :region_id
       t.integer :sheets
 
       t.timestamps
     end
-    add_index :clubs, :country
-    add_index :clubs, :region
+    add_index :clubs, :country_id
+    add_index :clubs, :region_id
   end
 end
