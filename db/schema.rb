@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120121192331) do
+ActiveRecord::Schema.define(:version => 20120123022000) do
 
   create_table "clubs", :force => true do |t|
     t.string   "name"
@@ -48,5 +48,14 @@ ActiveRecord::Schema.define(:version => 20120121192331) do
     t.string "name"
     t.string "code"
   end
+
+  create_table "sheets", :force => true do |t|
+    t.integer  "number"
+    t.integer  "club_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "sheets", ["club_id"], :name => "index_sheets_on_club_id"
 
 end

@@ -4,10 +4,10 @@ class Club < ActiveRecord::Base
   # ================
   belongs_to :country
   belongs_to :region
+  has_many :sheets
 
   # ===============
   # = Validations =
   # ===============
   validates :name, :presence => true
-  validates :sheets, :numericality => { :only_integer => true, :greater_than => 0 }
 end

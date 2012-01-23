@@ -13,6 +13,5 @@ FactoryGirl.define do
     email       'contact@example.com'
     website     'http://www.mycurlingclub.org'
     region
-    sheets      6
   end
 end
