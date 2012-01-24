@@ -21,7 +21,13 @@
     .container
 
       .content
+        .page-header
+          %h1= @header
+      
         = yield
+
+      %footer
+        &copy; 2012
 
     #dialog_container
       = yield :dialogs

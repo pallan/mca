@@ -1,0 +1,18 @@
+- @header = 'CurlManitoba Member Clubs'
+
+%table.bordered-table.zebra-striped
+  %thead
+    %tr
+      %th Name
+      %th City/Province
+      %th Region
+      %th Website
+      %th Sheets
+      %th
+  %tbody
+    - if @clubs.size > 0
+      = render @clubs
+    - else
+      %tr
+        %td{:colspan => 5}
+          No Clubs Available

@@ -1,0 +1,9 @@
+%tr
+  %td= link_to(club.name, club_path(club))
+  %td
+    = [club.city, club.province].compact.join(", ")
+  %td= club.region.try(:name)
+  %td= club.website
+  %td= club.sheets.count
+  %td= link_to(image_tag('link_icons/magnifier.png', :title => 'View'), club_path(club))
+    
